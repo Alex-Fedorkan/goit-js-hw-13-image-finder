@@ -76,6 +76,10 @@ function clearListOfImages() {
 }
 
 function onImageClick(event) {
+  if (event.target.nodeName !== 'IMG') {
+    return;
+  }
+
   const linkOnLargeImg = event.target.dataset.source;
 
   const modal = basicLightbox.create(
