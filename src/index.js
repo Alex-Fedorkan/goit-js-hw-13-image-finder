@@ -49,6 +49,16 @@ infScroll.on('load', response => {
   infScroll.appendItems(parsedItems);
 });
 
+infScroll.on('error', () => {
+  error({
+    title: 'Bad request answer!',
+    delay: 3000,
+    mouseReset: false,
+    closerHover: false,
+    stickerHover: false,
+  });
+});
+
 refs.inputEl.addEventListener('input', debounce(onInputChange, 750));
 refs.listOfImagesEL.addEventListener('click', onImageClick);
 
